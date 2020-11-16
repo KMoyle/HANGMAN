@@ -2,6 +2,7 @@
 
 Player::Player( std::string n, std::string p ): name(n), password(p)
 {
+    ++total_number_of_players;
     //ctor
 }
 std::string Player::getName(){
@@ -16,19 +17,19 @@ int Player::getGamesPlayed(){
     return games_played;
 }
 
-void Player::increaseGamesPlayed(){
-    games_played++;
+inline void Player::increaseGamesPlayed(){
+    ++games_played;
 }
 
 int Player::getGamesWon(){
     return games_won;
 }
 
-void Player::increaseGamesWon(){
-    games_won++;
+inline void Player::increaseGamesWon(){
+    ++games_won;
 }
 
-void Player::setLastGameScore( int gs ){
+inline void Player::setLastGameScore( int gs ){
     last_game_score = gs; //gs is score from game class
 }
 double Player::getLastGameScore(){
@@ -38,8 +39,12 @@ double Player::getLastGameScore(){
 double Player::getTotalScore(){
     return total_score;
 }
-void Player::increaseTotalScore(){
+inline void Player::increaseTotalScore(){
     total_score+=last_game_score;
+}
+
+void Player::usedWords(int w){
+    words_used.push_back(w);
 }
 
 Player::~Player()

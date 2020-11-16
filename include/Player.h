@@ -2,6 +2,7 @@
 #define PLAYER_H
 
 #include <string>
+#include <vector>
 
 
 class Player
@@ -20,19 +21,22 @@ class Player
         std::string getPassword();
 
         int getGamesPlayed();
-        void increaseGamesPlayed();
+        inline void increaseGamesPlayed();
 
         int getGamesWon();
-        void increaseGamesWon();
+        inline void increaseGamesWon();
 
-        void setLastGameScore(int);
+        inline void setLastGameScore(int);
         double getLastGameScore();
 
         double getTotalScore();
-        void increaseTotalScore();
+        inline void increaseTotalScore();
 
+        void usedWords(int);
 
         static int total_number_of_players;
+
+
 
     protected:
 
@@ -47,6 +51,8 @@ class Player
         int games_won{0};
         double total_score{0};
         double last_game_score{0};
+        std::vector<int> words_used;
+
 
 };
 
