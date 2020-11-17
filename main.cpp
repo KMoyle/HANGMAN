@@ -8,7 +8,7 @@ int Player::total_number_of_players{0};
 
 int main()
 {
-    std::string file_path("/home/lee/Documents/PROJECTS/HANGMAN/hangman/word_list.txt");
+    std::string file_path("/home/kyle/Documents/PROJECTS/HANGMAN/hangman/word_list.txt");
 
     Player *p = new Player( "Lee", "dirtyDonkey");
 
@@ -28,6 +28,11 @@ int main()
     game.getWordsList(file_path);
 
     cout << "Game Word: " << game.getNewWord() << endl;
+
+    game.drawBoard();
+
+    game.getGuess();
+
 
 
 
